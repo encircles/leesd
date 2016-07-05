@@ -1,5 +1,5 @@
 .gitignore
-.idea
+.idea/
 model/dbconfig.php
 text.php
 text2.php
