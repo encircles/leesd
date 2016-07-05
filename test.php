@@ -60,3 +60,8 @@ echo date('Y-m-d H:i:s');
 <div id="show"></div>
 </body>
 </html>
+<?php
+
+echo "test";
+
+?>

@@ -1,0 +1,21 @@
+<!--
+* {
+	margin:0;
+}
+body{
+    min-width: 960px;
+    font-family: "Microsoft YaHei UI", Helvetica, sans-serif;
+	font-size:14px;
+	background: #f4f4f4;
+}
+pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	font-family: "Microsoft YaHei UI", Helvetica, sans-serif;
+}
+div{
+    z-index: 1;
+}
+
+
+-->
