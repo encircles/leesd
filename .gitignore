@@ -1,4 +1,3 @@
-.gitignore
 .idea/
 model/dbconfig.php
 text.php
