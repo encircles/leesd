@@ -1,0 +1,7 @@
+.gitignore
+.idea
+model/dbconfig.php
+text.php
+text2.php
+text3.php
+text.css
