@@ -93,8 +93,8 @@
     margin-right:15px;
     padding-top:25px;
     font-size:15px;
-    /*font-family: "Microsoft YaHei UI", Helvetica, sans-serif;*/
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Microsoft YaHei UI", Helvetica, sans-serif;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 }
 .login{
     color:#a4a4a4;
@@ -113,8 +113,8 @@
     margin-left:200px;
     padding-top:10px;
     font-size:30px;
-    /*font-family: "Microsoft YaHei UI", Helvetica, sans-serif;*/
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Microsoft YaHei UI", Helvetica, sans-serif;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     text-decoration: none;
     width:170px;
     transition:all .3s linear;
