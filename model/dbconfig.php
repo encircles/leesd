@@ -1,10 +1,5 @@
 <?php
 
-//define('MYSQL_HOST','qdm112529115.my3w.com');
-//define('MYSQL_USER','qdm112529115');
-//define('MYSQL_PW','lj8229797');
-//define('MYSQL_SELECT_DB','qdm112529115_db');
-
 define('MYSQL_HOST','localhost');
 define('MYSQL_USER','root');
 define('MYSQL_PW','lj8229797');
