@@ -1,6 +1,6 @@
 <?php
-date_default_timezone_set("prc");
-echo date('Y-m-d H:i:s');
+/*date_default_timezone_set("prc");
+echo date('Y-m-d H:i:s');*/
 
 ?>
 
@@ -19,6 +19,10 @@ echo date('Y-m-d H:i:s');
 
     </style>
     <script type="text/javascript">
+
+        window.onload=function(){
+            showpage('./test.php');
+        };
 
         function addcontent(n){
 
@@ -48,20 +52,64 @@ echo date('Y-m-d H:i:s');
             xhr.send(info);
         }
 
+        function showpage(url){
+            var xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4){
+                    document.getElementById("showdiv").innerHTML=xhr.responseText;
+                }
+            };
+            xhr.open('get',url);
+            xhr.send(null);
+        }
+
+
 
     </script>
 </head>
 <body>
-<a id="content1" onclick="addcontent(1)" href="javascript:">123</a>
-<a id="content2" onclick="addcontent(2)" href="javascript:">33</a>
-<textarea id="commentText" class="commentText" rows="1" draggable="false">
-</textarea><br/>
-<input class="conmentBt" type="button" value="回复" onclick="test()"/>
-<div id="show"></div>
+
 </body>
 </html>
 <?php
+require_once 'model/Fenye.class.php';
+require_once 'model/ctService.class.php';
 
-echo "test";
+$ctserv=new ctService();
+$fenye=new Fenye();
+
+if(!empty($_GET['page'])){
+    $fenye->setPageNow($_GET['page']);
+}else{
+    $fenye->setPageNow(1);
+}
+
+$fenye->setPageSize(3);
+$ctserv->getCommentAFP($fenye,70);
+$res_arr=$fenye->getResArray();
+
+
+echo "<div id='showdiv'>";
+
+echo "<table>";
+
+foreach($res_arr as $k=>$value){
+    echo "<tr>";
+    foreach($value as $k=>$v){
+        echo "<td>$v</td>";
+    }
+    echo "</tr>";
+}
+
+
+
+
+
+echo "</table>";
+echo $fenye->getNavigate();
+echo "</div>";
+
+
+
 
 ?>
