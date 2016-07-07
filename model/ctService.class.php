@@ -70,6 +70,25 @@ class ctService{
         }
     }
 
+    /**
+     * ajax分页
+     * @param Fenye $fenye
+     * @param $id
+     */
+    public function getCommentAFP(Fenye $fenye,$id){
+        $sql1="select * from comment_table where id='$id' order by id desc limit "
+            .($fenye->getPageNow()-1)*($fenye->getPageSize())
+            .",".$fenye->getPageSize();
+        $sql2="";
+        $rows=$this->getCommentCount($id);
+        if(!$rows){
+            die("暂时没有评论...");
+        }
+        $sh=new SqlHelper();
+        $sh->execute_dql_fenye2($sql1,$sql2,$fenye,$rows);
+        $sh->close_connect();
+    }
+
 }
 
 

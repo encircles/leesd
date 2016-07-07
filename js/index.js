@@ -123,6 +123,22 @@ function openComment(id){
     }
 }
 
+function showpage(url){
+    var id_index=url.indexOf("=");
+    var and_index=url.indexOf("&");
+    var end=and_index - id_index -1;
+    var id=url.substr(id_index+1,end);
+    var showct="showCommentDiv"+id;
+    var xhr=new XMLHttpRequest();
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4){
+            document.getElementById(showct).innerHTML=xhr.responseText;
+        }
+    };
+    xhr.open('get',url);
+    xhr.send(null);
+}
+
 function addComment(id,uid,sender,receiver){
     var ct_id="commentText"+id;
     var content=document.getElementById(ct_id).value;
