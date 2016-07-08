@@ -22,7 +22,13 @@ if(!empty($_GET['page'])){
 
 $fenye->setPageSize(10);
 
-$udserv->getAjaxFenyePage($fenye);
+//判断是否是搜索的结果
+if(empty($_GET['searchVal'])){
+    $udserv->getAjaxFenyePage($fenye);
+}else{
+    echo "<br/><span style='font-size: 20px;'>search 搜索\"{$_GET['searchVal']}\":<br/><br/></span>";
+    $udserv->getAjaxFenyePage($fenye,"search",$_GET['searchVal']);
+}
 
 if($_GET['page']>$fenye->getPageCount()){
     die("输入错误");
