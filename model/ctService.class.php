@@ -76,7 +76,7 @@ class ctService{
      * @param $id
      */
     public function getCommentAFP(Fenye $fenye,$id){
-        $sql1="select * from comment_table where id='$id' order by id desc limit "
+        $sql1="select * from comment_table where id='$id' order by time desc limit "
             .($fenye->getPageNow()-1)*($fenye->getPageSize())
             .",".$fenye->getPageSize();
         $sql2="";

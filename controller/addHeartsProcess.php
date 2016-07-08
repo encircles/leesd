@@ -3,14 +3,14 @@ session_start();
 require_once '../model/udService.class.php';
 require_once '../model/usersService.class.php';
 
-if(empty($_GET['id'])){
+if(empty($_REQUEST['id'])){
     die("参数错误");
 }
-$id=$_GET['id'];
-if(empty($_GET['type'])){
+$id=$_REQUEST['id'];
+if(empty($_REQUEST['type'])){
     die("参数错误");
 }
-$type=$_GET['type'];
+$type=$_REQUEST['type'];
 
 $udserv=new udService();
 $usersservice=new usersService();

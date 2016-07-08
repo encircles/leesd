@@ -10,6 +10,7 @@ $time=date('Y-m-d H:i:s');
 	<title>留言板leesd.net</title>
 	<link rel="stylesheet" href="css/global.css" type="text/css"/>
     <link rel="stylesheet" href="css/index.css" type="text/css"/>
+	<script type="application/javascript" src="./js/common_tools.js"></script>
 	<script type="application/javascript" src="./js/index.js"></script>
 </head>
 <body id="top">

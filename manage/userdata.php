@@ -10,26 +10,26 @@ require_once '../model/Fenye.class.php';
 $usersservice=new usersService();
 $fenye=new Fenye();
 
-if(!empty($_GET['page'])){
-    if($_GET['page']<1){
+if(!empty($_REQUEST['page'])){
+    if($_REQUEST['page']<1){
         die("输入错误");
     }
-    $_GET['page']=ceil($_GET['page']);
-    $fenye->setPageNow($_GET['page']);
+    $_REQUEST['page']=ceil($_REQUEST['page']);
+    $fenye->setPageNow($_REQUEST['page']);
 }
 
 $fenye->setPageSize(10);
 //$fenye->setPageNow(3);
 
 //判断是否是搜索的结果
-if(empty($_GET['searchVal'])){
+if(empty($_REQUEST['searchVal'])){
     $usersservice->getFenyePage($fenye);
 }else{
-    echo "<br/><span style='font-size: 20px;'>search 搜索\"{$_GET['searchVal']}\":<br/><br/></span>";
+    echo "<br/><span style='font-size: 20px;'>search 搜索\"{$_REQUEST['searchVal']}\":<br/><br/></span>";
     $usersservice->getFenyePage($fenye,"search",$_GET['searchVal']);
 }
 
-if($_GET['page']>$fenye->getPageCount()){
+if($_REQUEST['page']>$fenye->getPageCount()){
     die("输入错误");
 }
 

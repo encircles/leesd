@@ -11,19 +11,19 @@ $userservice=new usersService();
 $fenye=new Fenye();
 // 这里我们需要根据用户的点击来修改$pageNow这个值
 // 这里我们需要判断是否有这个page发送过来
-if(!empty($_GET['page'])){
-	if($_GET['page']<1){
+if(!empty($_REQUEST['page'])){
+	if($_REQUEST['page']<1){
 		die("输入错误");
 	}
-	$_GET['page']=ceil($_GET['page']);
-	$fenye->setPageNow($_GET['page']);
+    $_REQUEST['page']=ceil($_REQUEST['page']);
+	$fenye->setPageNow($_REQUEST['page']);
 }
 
-if(!empty($_GET['msg'])){
-	if($_GET['msg']=='addok'){
+if(!empty($_REQUEST['msg'])){
+	if($_REQUEST['msg']=='addok'){
 		echo "<script>alert('添加成功');
 			window.location.href='index.php'; </script>";
-	}else if($_GET['msg']=='delok'){
+	}else if($_REQUEST['msg']=='delok'){
 		echo "<script>alert('删除成功');
 			window.location.href='index.php'; </script>";
 	}
@@ -32,7 +32,7 @@ if(!empty($_GET['msg'])){
 //$arr=$udserv->getContentArr();
 $udserv->getFenyePage($fenye);
 
-if($_GET['page']>$fenye->getPageCount()){
+if($_REQUEST['page']>$fenye->getPageCount()){
 	die("输入错误");
 }
 
@@ -101,7 +101,8 @@ for ($i=0; $i < count($arr); $i++) {
         }
     }
 
-    echo "<span id='commentDiv{$id}' class='commentDiv' onclick='openComment($id)'>评论</span>";
+    echo "<span id='commentDiv{$id}' class='commentDiv' "
+        ."onclick='openComment({$id})'>评论</span>";
     //评论数
     echo "<span id='commentCount{$id}' class='commentCountDiv'>"
         .$count_ct."</span>";

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>管理界面</title>
     <link rel="stylesheet" href="../css/manage.css" type="text/css">
+    <script type="text/javascript" src="../js/common_tools.js"></script>
     <script type="text/javascript" src="../js/manage.js"></script>
 </head>
 <body>
