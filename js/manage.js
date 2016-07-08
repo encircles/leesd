@@ -30,7 +30,12 @@ function searchContent(){
         }
         showpage(url);
     }else{
-        showpage('./userdata.php');
+        if(searchVal=="搜索用户"){
+            showpage('./userdata.php');
+        }else if(searchVal=="搜索留言"){
+            showpage('./contentdata.php');
+        }
+
     }
 }
 
