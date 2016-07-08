@@ -126,7 +126,7 @@ function openComment(id){
 function showpage(url){
     var id_index=url.indexOf("=");
     var and_index=url.indexOf("&");
-    var end=and_index - id_index -1;
+    var end=id_index - and_index -1;
     var id=url.substr(id_index+1,end);
     var showct="showCommentDiv"+id;
     var xhr=new XMLHttpRequest();

@@ -12,25 +12,25 @@ require_once '../model/Fenye.class.php';
 $udserv=new udService();
 $fenye=new Fenye();
 
-if(!empty($_GET['page'])){
-    if($_GET['page']<1){
+if(!empty($_REQUEST['page'])){
+    if($_REQUEST['page']<1){
         die("输入错误");
     }
-    $_GET['page']=ceil($_GET['page']);
-    $fenye->setPageNow($_GET['page']);
+    $_REQUEST['page']=ceil($_REQUEST['page']);
+    $fenye->setPageNow($_REQUEST['page']);
 }
 
 $fenye->setPageSize(10);
 
 //判断是否是搜索的结果
-if(empty($_GET['searchVal'])){
+if(empty($_REQUEST['searchVal'])){
     $udserv->getAjaxFenyePage($fenye);
 }else{
-    echo "<br/><span style='font-size: 20px;'>search 搜索\"{$_GET['searchVal']}\":<br/><br/></span>";
-    $udserv->getAjaxFenyePage($fenye,"search",$_GET['searchVal']);
+    echo "<br/><span style='font-size: 20px;'>search 搜索\"{$_REQUEST['searchVal']}\":<br/><br/></span>";
+    $udserv->getAjaxFenyePage($fenye,"search",$_REQUEST['searchVal']);
 }
 
-if($_GET['page']>$fenye->getPageCount()){
+if($_REQUEST['page']>$fenye->getPageCount()){
     die("输入错误");
 }
 
@@ -73,7 +73,7 @@ for ($i=0; $i < count($arr); $i++) {
 
     }
     echo "<td>$nowtime</td>";
-    echo "<td><a href='javascript:showpage(\"./editLeaveMsg.php?id={$id}&name={$name}&
+    echo "<td><a href='javascript:showpage(\"./editLeaveMsg.php?&id={$id}&name={$name}&
 title={$title}&content={$content}&nowtime={$nowtime}\")'>
             编辑</a></td>";
     echo "<td><a href='../controller/deleteProcess.php?deluid={$value['uid']}'

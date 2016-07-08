@@ -30,7 +30,7 @@ class Fenye{
         if(isset($parse["query"])){
             parse_str($parse['query'],$params);
             unset($params["page"]);
-            $url=$parse['path'].'?'.http_build_query($params);
+            $url=$parse['path'].'?&'.http_build_query($params);
         }
         return $url;
     }

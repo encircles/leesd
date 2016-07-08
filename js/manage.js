@@ -1,20 +1,32 @@
 
 window.onload=function(){
     var um=document.getElementById("usermanage");
-    showpage('./userdata.php');
+    showpage('./userdata.php','userlist');
     um.style.backgroundColor="#2aa7ff";
 };
 
-//显示页面
+/**
+ * @param url
+ */
 function showpage(url){
+    var showct="";
+    if(arguments[1]!=undefined){
+        showct=arguments[1]; //函数的第二个参数为元素id
+    }else{
+        showct="userlist";
+    }
+
+    var arr=new Array(null);
+    arr=splitURL(url);
     var xhr=new XMLHttpRequest();
     xhr.onreadystatechange=function(){
         if(xhr.readyState==4){
-            document.getElementById('userlist').innerHTML=xhr.responseText;
+            document.getElementById(showct).innerHTML=xhr.responseText;
         }
     };
-    xhr.open('get',url);
-    xhr.send(null);
+    xhr.open('post',arr['uri']);
+    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+    xhr.send(arr['info']);
 }
 
 //search
