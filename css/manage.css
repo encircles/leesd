@@ -18,7 +18,7 @@ body{min-width: 960px;font-family: "Microsoft YaHei UI", Helvetica, sans-serif;}
 
 .searchtext{height:25px;border: 1px solid #2aa7ff;background-color: #ffffff;}
 
-.searchbutton{width:50px;height:25px;border: none;background-color: #ffffff; cursor: pointer;}
+.searchbutton{width:70px;height:25px;border: none;background-color: #ffffff; cursor: pointer;}
 
 .searchbutton:hover{background-color: #e4e4e4;}
 

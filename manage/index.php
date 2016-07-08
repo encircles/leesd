@@ -15,7 +15,7 @@
             <li><a id="contentmanage" onclick="switchNav(this.innerHTML)">留言管理</a></li>
             <li class="exit"><a onclick="goToIndex()">返回主页</a></li>
             <li class="searchli"><input id="searchContent" class="searchtext" type="text"/>
-                <input class="searchbutton" type="button" value="搜索" onclick="searchContent()"/></li>
+                <input id="searchVal" class="searchbutton" type="button" value="搜索用户" onclick="searchContent()"/></li>
         </ul>
     </div>
     <div id="test"></div>
