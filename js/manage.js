@@ -62,12 +62,12 @@ function switchNav(v){
     var cm=document.getElementById("contentmanage");
     var searchBt=document.getElementById("searchVal");
     if(v=="用户管理"){
-        showpage('./userdata.php');
+        showpage('./userdata.php?&type=all');
         um.style.backgroundColor="#2aa7ff";
         cm.style.backgroundColor="";
         searchBt.value="搜索用户";
     }else if(v=="留言管理"){
-        showpage('./contentdata.php');
+        showpage('./contentdata.php?&type=all');
         um.style.backgroundColor="";
         cm.style.backgroundColor="#2aa7ff";
         searchBt.value="搜索留言";

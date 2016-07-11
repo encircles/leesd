@@ -1,7 +1,15 @@
 <?php
+header("Content-type:text/html;charset=utf-8");
 session_start();
 if(empty($_SESSION['loginuser'])){
     exit("<a href='../index.php'>返回主页</a>");
+}
+
+if(!empty($_REQUEST['searchVal'])){
+    $_SESSION['searchVal']=$_REQUEST['searchVal'];
+}
+if(!empty($_REQUEST['type'])){
+    $_SESSION['searchVal']="";
 }
 
 require_once '../model/usersService.class.php';
@@ -22,12 +30,11 @@ $fenye->setPageSize(10);
 //$fenye->setPageNow(3);
 
 //判断是否是搜索的结果
-if(empty($_REQUEST['searchVal'])){
-    $usersservice->getFenyePage($fenye);
-}else{
-    echo "<br/><span style='font-size: 20px;'>search 搜索\"{$_REQUEST['searchVal']}\":<br/><br/></span>";
-    $usersservice->getFenyePage($fenye,"search",$_GET['searchVal']);
+if(!empty($_SESSION['searchVal'])){
+    echo "<br/><span style='font-size: 20px;'>search 搜索\"{$_SESSION['searchVal']}\":<br/><br/></span>";
 }
+
+$usersservice->getFenyePage($fenye,"search",$_SESSION['searchVal']);
 
 if($_REQUEST['page']>$fenye->getPageCount()){
     die("输入错误");
