@@ -241,6 +241,14 @@
     text-decoration: none;
 }
 
+.commentfenye a{
+    color: #a4a4a4;
+}
+
+.commentfenye a:hover{
+    color:#2aa7ff;
+}
+
 .commentText{
     margin-left:90px;
     margin-top:20px;
