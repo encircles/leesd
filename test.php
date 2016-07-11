@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,42 +7,20 @@
     <script type="text/javascript" src="js/common_tools.js"></script>
     <script type="text/javascript">
 
-
-        function test(url){
-            var arr=new Array();
-            arr=splitURL(url);
-            alert(arr['uri']);
-            alert(arr['info']);
-        }
-
-        function test2(url){
-            var num=url.indexOf("^");
-            alert(num);
-        }
-
-        function test3(url){
-            alert(getUrlId(url));
-        }
     </script>
 </head>
 <body>
+
+<form action="heads_update_file.php" method="post" enctype="multipart/form-data">
+    <label for="file">Filename:</label>
+    <input type="file" name="file" id="file" />
+    <br />
+    <input type="submit" name="submit" value="Submit" />
+</form>
 
 </body>
 </html>
 
 <?php
-
-$url="./showcomment.php?&id=70";
-$v1="v1";
-$v2="v2";
-$v3="v3";
-$v4="v4";
-$v5="v5";
-
-echo <<<EOF
-    <input id="test_id" type="button" value="test"
-    onclick="test3('{$url}')"/>
-EOF;
-
 
 ?>

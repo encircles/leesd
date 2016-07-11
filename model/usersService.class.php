@@ -2,6 +2,20 @@
 require_once 'SqlHelper.class.php';
 
 class usersService{
+    public function setHeadsUrl($name,$url){
+        $sql="update users set heads_url='{$url}' where uname='{$name}'";
+        $sh=new SqlHelper();
+        $b=$sh->execute_dml($sql);
+        return $b;
+    }
+
+    public function getHeadsUrl($name){
+        $sql="select heads_url from users where uname='$name'";
+        $sh=new SqlHelper();
+        $arr=$sh->execute_dql_arr($sql);
+        $sh->close_connect();
+        return $arr;
+    }
 
     public function checkForRepetition($username){
         $sql="select uname from users where uname='{$username}'";
@@ -135,6 +149,18 @@ class usersService{
 
     public function getUsers(){
         $sql="select * from users";
+        $sh=new SqlHelper();
+        $arr=$sh->execute_dql_arr($sql);
+        $sh->close_connect();
+        return $arr;
+    }
+
+    /**
+     * @param $uname
+     * @return array (uid,uname,tel,qq,likes)
+     */
+    public function getUser($name){
+        $sql="select uid,uname,tel,qq,likes,heads_url from users where uname='$name'";
         $sh=new SqlHelper();
         $arr=$sh->execute_dql_arr($sql);
         $sh->close_connect();

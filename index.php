@@ -41,29 +41,31 @@ $time=date('Y-m-d H:i:s');
 		</div>
         <div id="menudiv2" class="menudiv2" style="display: none;">
             <div class="m2k">
-                <div class="m2d"><a href="./account/index.php">个人资料</a></div>
+                <div class="m2d"><a href="javascript:goToAccount()">个人资料</a></div>
                 <div class="m2d"><a href="javascript:">管理留言</a></div>
                 <div class="m2d"><a href="javascript:">我喜欢的</a></div>
                 <div class="m2d"><a href="javascript:">设置</a></div>
             </div>
         </div>
-
-		<span class="sp1">
 			<?php
+                echo "<span class=\"sp1\">";
 
 				if(empty($_SESSION['loginuser'])){
 					echo "<div class='login'><a href=\"login.php\">登录</a>&nbsp;<a href=\"register.php\">注册</a></div>";
 				}else{
-					echo "<div class='login'><span style='color:#2aa7ff;'>" .$_SESSION['loginuser']."</span>&nbsp;";
+                    echo "<img onclick='goToAccount()' id='touxiang' class='touxiang' src='images/userheads/default.gif'/>";
+					echo "<div class='login'>"
+                        //."<img class='touxiang' src='./images/default.gif'/>"
+                        ."<span style='color:#2aa7ff;'>"
+                        .$_SESSION['loginuser']."</span>&nbsp;";
                     echo "#".$_SESSION['UID']."&nbsp;";
                     if($_SESSION['pLevel']==255){
                         echo "<a href='./manage/index.php'>管理</a>&nbsp;";
                     }
 					echo "<a href='javascript:safeQuit()'>退出</a></div>";
 				}
+                echo "</span><span class=\"sp2\"><a href=\"index.php\">LEESD.NET</a></span>";
 			?>
-
-			</span><span class="sp2"><a href="index.php">LEESD.NET</a></span>
 	</div>
 
 	<div class="contentdiv">
