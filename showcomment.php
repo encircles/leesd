@@ -45,7 +45,7 @@ foreach($ct_arr as $key=>$value){
 }
 
 if($fenye->getRowCount()>5){
-    echo $fenye->getNavigate();
+    echo "<span class='commentfenye'>".$fenye->getNavigate()."</span>";
 }
 
 ?>

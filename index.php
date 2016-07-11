@@ -53,7 +53,7 @@ $time=date('Y-m-d H:i:s');
 				if(empty($_SESSION['loginuser'])){
 					echo "<div class='login'><a href=\"login.php\">登录</a>&nbsp;<a href=\"register.php\">注册</a></div>";
 				}else{
-                    echo "<img class='touxiang' src='images/userheads/default.gif'/>";
+                    echo "<img id='touxiang' class='touxiang' src='images/userheads/default.gif'/>";
 					echo "<div class='login'>"
                         //."<img class='touxiang' src='./images/default.gif'/>"
                         ."<span style='color:#2aa7ff;'>"

@@ -2,6 +2,18 @@
  * Created by encir on 2016/6/27.
  */
 
+//页面加载,获取头像url
+window.onload=function(){
+    var tx=document.getElementById("touxiang");
+    var xhr=new XMLHttpRequest();
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4){
+            tx.src=xhr.responseText;
+        }
+    };
+    xhr.open('get',"./getHeadsUrl.php");
+    xhr.send(null);
+};
 
 window.onscroll=function(){
     var t = document.documentElement.scrollTop || document.body.scrollTop;
