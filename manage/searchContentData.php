@@ -1,5 +1,5 @@
 <?php
-header("Content-type:text/html;charset=utf-8");
+/*header("Content-type:text/html;charset=utf-8");
 
 session_start();
 if(empty($_SESSION['loginuser'])){
@@ -87,4 +87,4 @@ if($fenye->getRowCount()>0){
     echo "<div class='fenyeDiv'>".$fenye->getNavigate()."</div>";
 }
 
-?>
+*/?>

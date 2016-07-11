@@ -7,11 +7,11 @@ if(empty($_SESSION['loginuser'])){
     exit("<a href='../index.php'>返回主页</a>");
 }
 
-if($_REQUEST['searchVal']){
+if(!empty($_REQUEST['searchVal'])){
     $_SESSION['searchVal']=$_REQUEST['searchVal'];
 }
 if(!empty($_REQUEST['type'])){
-    //................
+    $_SESSION['searchVal']="";
 }
 
 require_once '../model/udService.class.php';
@@ -30,9 +30,10 @@ if(!empty($_REQUEST['page'])){
 
 $fenye->setPageSize(10);
 
-echo "<br/><span style='font-size: 20px;'>search 搜索\"{$_SESSION['searchVal']}\":<br/><br/></span>";
+if(!empty($_SESSION['searchVal'])){
+    echo "<br/><span style='font-size: 20px;'>search 搜索\"{$_SESSION['searchVal']}\":<br/><br/></span>";
+}
 $udserv->getAjaxFenyePage($fenye,"search",$_SESSION['searchVal']);
-
 
 if($_REQUEST['page']>$fenye->getPageCount()){
     die("输入错误");
