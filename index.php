@@ -41,7 +41,7 @@ $time=date('Y-m-d H:i:s');
 		</div>
         <div id="menudiv2" class="menudiv2" style="display: none;">
             <div class="m2k">
-                <div class="m2d"><a href="./account/index.php">个人资料</a></div>
+                <div class="m2d"><a href="javascript:goToAccount()">个人资料</a></div>
                 <div class="m2d"><a href="javascript:">管理留言</a></div>
                 <div class="m2d"><a href="javascript:">我喜欢的</a></div>
                 <div class="m2d"><a href="javascript:">设置</a></div>

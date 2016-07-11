@@ -25,7 +25,8 @@ class SqlHelper{
     public function execute_dql_arr($sql){
         $arr=array();
         $res=mysql_query($sql,$this->conn) or die(mysql_error());
-        while($row=mysql_fetch_array($res)){
+        //while($row=mysql_fetch_array($res)){
+        while($row=mysql_fetch_assoc($res)){
             $arr[]=$row;
         }
         mysql_free_result($res);

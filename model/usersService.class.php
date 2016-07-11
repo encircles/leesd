@@ -141,6 +141,18 @@ class usersService{
         return $arr;
     }
 
+    /**
+     * @param $uname
+     * @return array (uid,uname,tel,qq,likes)
+     */
+    public function getUser($name){
+        $sql="select uid,uname,tel,qq,likes from users where uname='$name'";
+        $sh=new SqlHelper();
+        $arr=$sh->execute_dql_arr($sql);
+        $sh->close_connect();
+        return $arr;
+    }
+
     public function getSearchUsers($val){
         $sql="select * from users where uname like '%$val%'";
         $sh=new SqlHelper();

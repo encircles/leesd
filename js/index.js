@@ -215,3 +215,7 @@ function safeQuit(){
     window.location="./safeQuit.php";
 }
 
+function goToAccount(){
+    window.location="./account/";
+}
+
