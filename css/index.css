@@ -96,7 +96,19 @@
     font-family: "Microsoft YaHei UI", Helvetica, sans-serif;
     /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 }
+
+.touxiang{
+    display: inline;
+    float:left;
+    margin-top:-15px;
+    margin-right:15px;
+    width:40px;
+    height:40px;
+    border-radius: 40px;
+}
+
 .login{
+    float:right;
     color:#a4a4a4;
 }
 .login a{
@@ -107,6 +119,8 @@
 .login a:hover{
     color:#2aa7ff;
 }
+
+
 .lybHead .sp2 a{
     color: #2aa7ff;
     display: block;
