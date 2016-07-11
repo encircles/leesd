@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(empty($_SESSION['loginuser'])){
+    die("请登录");
+}
 
 echo "<a href='../index.php'>返回</a>";
 echo "<h2>个人资料</h2>";
